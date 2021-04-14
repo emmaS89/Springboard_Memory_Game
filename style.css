@@ -1,0 +1,119 @@
+*,
+*::before,
+*::after {
+    margin: 0;;
+    padding: 0;
+    box-sizing: border-box;;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 1430px;
+    font-family: 'Alegreya', serif;
+}
+
+/* Header */
+.game-title {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    letter-spacing: 1rem;
+    text-shadow: 2px 3px 3px #da2424;
+}
+
+h3 {
+    margin-top: 10px;
+    letter-spacing: 0.5rem;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.timer {
+    margin-left: 150px;
+    font-size: 2rem;
+    text-shadow: 2px 3px 3px #da2424;
+}
+
+.moves {
+    margin-right: 150px;
+    font-size: 2rem;
+    text-shadow: 2px 3px 3px #da2424;
+}
+
+.span-text {
+
+    font-weight: 500;
+    padding-left: 1rem;
+}
+
+/* Game */
+.game-container {
+    border: 2px solid #da2424;
+    -webkit-box-shadow: 1px 4px 15px 9px #da2424; 
+    box-shadow: 1px 4px 15px 9px #da2424;
+    background-color:rgba(212, 177, 177, 0.3);
+    width: 1200px;
+    height: 650px;
+    margin: 5px auto;
+    position: relative;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.flip-container {
+    position: relative;
+    perspective: 1000px;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    margin: 10px auto;
+    grid-gap: 10px;
+}
+
+.card {
+    width: 150px;
+    height: 270px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: scale(1);
+    transform: transform 0.3s;
+}
+
+.card,
+.front,
+.back {
+    width: 150px;
+    height: 270px;
+    margin: 10px auto;
+
+}
+
+.front,
+.back {
+    position: absolute;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    border: 2px solid #000;
+    -webkit-box-shadow: inset 1px 4px 15px 9px rgba(0, 0, 0, 0.9); 
+    box-shadow: inset 1px 4px 15px 9px rgba(0, 0, 0, 0.9);
+}
+
+.card:active {
+    transform: scale(0.97);
+    transition: transform 0.2s;
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
